@@ -1,3 +1,5 @@
+import string
+
 termos_dificeis = {
     "pusilânime":"covarde",
     "rescindir": "cancelar",
@@ -12,7 +14,7 @@ def simplifica(texto):
     resultado = []
     for palavra in palavras:
         palavra = palavra.lower()
-        palavra = palavra.strip(",")
+        palavra = palavra.strip(string.punctuation)
         
         if palavra in termos_dificeis:
             palavra = termos_dificeis[palavra]
@@ -22,4 +24,6 @@ def simplifica(texto):
     frase = " ".join(resultado)
     return frase
 
-print(simplifica("ele vai rescindir o contrato"))
+#testes
+print(simplifica("O Locador rescinde o contrato."))
+print(simplifica("Isso é pusilânime e inócuo."))
