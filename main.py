@@ -9,6 +9,10 @@ termos_dificeis = {
 }
 
 def simplifica(texto):
+    return mock_ia(substitui(texto))
+
+
+def substitui(texto):
     palavras = texto.split()
     
     resultado = []
@@ -24,6 +28,11 @@ def simplifica(texto):
     frase = " ".join(resultado)
     return frase
 
+def mock_ia (texto):
+    print("Simulando IA..")
+    return texto
+    
+    
 #testes
 print(simplifica("O Locador rescinde o contrato."))
 print(simplifica("Isso é pusilânime e inócuo."))
