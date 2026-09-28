@@ -1,5 +1,12 @@
 import string
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # carrega o conteúdo do .env pra "dentro" do ambiente
+chave = os.getenv("OPENAI_API_KEY")  # pega o valor da variável
+
+
 termos_dificeis = {
     "pusilânime":"covarde",
     "rescindir": "cancelar",
@@ -36,3 +43,4 @@ def mock_ia (texto):
 #testes
 print(simplifica("O Locador rescinde o contrato."))
 print(simplifica("Isso é pusilânime e inócuo."))
+print(chave)
