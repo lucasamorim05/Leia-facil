@@ -44,10 +44,20 @@ def revisorIa (texto):
     model="gemini-3.8-flash",
     contents=texto,
     config=types.GenerateContentConfig(
-        system_instruction= "Você é um revisor de textos . Você vai receber uma frase e deve tornar ela coerente. Mude as palavras que " \
-"ainda soarem formais/difíceis para serem coerentes com o tom simples do texto. Não invente informações que não estavam no " \
-"texto original nem mudar seu contexto ou adicionar opinião. Na resposta, quero apenas a frase simplificada e coerente"
+        system_instruction= """
+        
+        Você é um revisor de textos. Você vai receber uma frase e deve tornar ela coerente.
 
+        Anteriormente, esse texto passou por modificações que aconteceram por meio de um progama que substitui palavras muito formais por palavras mais simples
+
+        Porém, algumas palavras formais não foram modificadas devido a concordância/conjugação. (por exemplo, verbo no infinitivo que deveria estar conjugado). 
+
+        Você deve mudar essas palavras para que sejam coerentes com o tom simples do texto, mas não troque palavras que já façam sentido. 
+
+        Não invente informações que não estavam no texto original nem
+        mudar seu contexto ou adicionar opinião. 
+
+        Na resposta, quero apenas a frase simplificada e coerente"""
     )
 )
     return response.text
