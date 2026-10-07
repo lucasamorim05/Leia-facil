@@ -64,5 +64,6 @@ def revisorIa (texto):
 
 
 #testes
-print(simplifica("O Locador rescinde o contrato."))
-print(simplifica("Isso é pusilânime e inócuo."))
+if __name__ == "__main__":
+    print(simplifica("O Locador rescinde o contrato."))
+    print(simplifica("Isso é pusilânime e inócuo."))
